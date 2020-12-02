@@ -4,7 +4,7 @@ import Hello from "./Hello";
 import "./style.css";
 import Select from "./Select";
 import zhCN from "antd/es/locale/zh_CN";
-
+import { ConfigProvider } from "antd";
 import "antd/dist/antd.css";
 // import "./index.css";
 class App extends Component {
@@ -17,11 +17,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Select />
-        <Hello name={this.state.name} />
-        <p>Start editing to see some magic happen :)</p>
-      </div>
+      <ConfigProvider locale={zhCN}>
+        <div>
+          <Select />
+          <Hello name={this.state.name} />
+          <p>Start editing to see some magic happen :)</p>
+        </div>
+      </ConfigProvider>
     );
   }
 }
