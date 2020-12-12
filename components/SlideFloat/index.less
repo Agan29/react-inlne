@@ -1,0 +1,50 @@
+.float-wrapper {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  right: 4px;
+  bottom: 72px;
+  background-color: #fff;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.float {
+}
+
+.modal {
+  position: absolute;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 128px;
+  height: 128px;
+  z-index: 12;
+  right: 56px;
+  top: 24px;
+  background-color: #fff;
+  transform-origin: 100% 50%;
+  transform: translate(24px, -50%) scale(0);
+  transition: all 0.3s ease;
+  &.is-show {
+    transform: translate(0, -50%) scale(1);
+  }
+}
+
+.modal:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 10px solid #fff;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  display: block;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
