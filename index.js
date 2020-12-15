@@ -29,10 +29,12 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    // 获取类组件fixedButton 的Dom
     const fixedButton = findDOMNode(this.fixedButton.current);
     console.log({ fixedButton });
+    // 获取 fixedButton 的 style 属性
     const rect = getComputedStyle(fixedButton) || currentStyle(fixedButton);
-    console.log(rect.getPropertyValue("top"));
+    // set Modal 的 top 和 right
     this.setState({
       rect: {
         top: parseFloat(rect.getPropertyValue("top")) + 16,
@@ -40,7 +42,7 @@ class App extends Component {
       }
     });
   };
-
+  // set 显示隐藏
   handlClick = () => {
     this.setState({ toggleShow: !this.state.toggleShow });
   };

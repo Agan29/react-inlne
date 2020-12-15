@@ -10,6 +10,7 @@ const Modal = props => {
       <div
         ref={modal}
         className={`modal ${props.show ? "is-show" : ""}`}
+        // 设置 位置
         style={{ top: rect.top + "px", right: rect.right + "px" }}
       >
         this is modal
