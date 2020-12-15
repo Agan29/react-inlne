@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import "./index.less";
-const SlideFloat = () => {
-  const [toggleShow, setToggleShow] = useState(false);
-  const handleClick = () => {
-    console.log("click");
-    setToggleShow(!toggleShow);
-  };
-  return (
-    <>
-      <div className="float-wrapper">
-        <div className="float" onClick={handleClick}>
-          点我
+class SlideFloat extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <>
+        <div className="float-wrapper">
+          <div className="float" onClick={this.props.onClick}>
+            点我
+          </div>
         </div>
-        <div className={`modal ${toggleShow ? "is-show" : ""}`}>
-          this is modal
-        </div>
-      </div>
-    </>
-  );
-};
+      </>
+    );
+  }
+}
 
 export default SlideFloat;
