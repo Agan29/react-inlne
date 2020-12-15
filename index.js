@@ -20,7 +20,7 @@ class App extends Component {
       name: "React",
       rect: {
         top: 0,
-        right: 0
+        left: 0
       },
       toggleShow: false
     };
@@ -30,11 +30,14 @@ class App extends Component {
 
   componentDidMount = () => {
     const fixedButton = findDOMNode(this.fixedButton.current);
-    console.log(fixedButton);
-    const rect = fixedButton.getBoundingClientRect();
-    console.log(rect);
+    console.log({ fixedButton });
+    const rect = getComputedStyle(fixedButton) || currentStyle(fixedButton);
+    console.log(rect.getPropertyValue("top"));
     this.setState({
-      rect: { top: rect.top, right: rect.right }
+      rect: {
+        top: parseFloat(rect.getPropertyValue("top")) + 16,
+        left: parseFloat(rect.getPropertyValue("right"))
+      }
     });
   };
 
