@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Demo from "./Demo";
 import "./index.less";
 
 const Modal = props => {
@@ -13,7 +14,10 @@ const Modal = props => {
         // 设置 位置
         style={{ top: rect.top + "px", right: rect.right + "px" }}
       >
-        this is modal
+        <div className="modal-body">
+          <img src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+          <Demo />
+        </div>
       </div>
     </>
   );
